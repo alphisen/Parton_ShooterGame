@@ -14,7 +14,6 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     /***Variables***/
-
     public bool DestroyOnDeath = true;
     public GameObject DeathParticlesPrefab = null;
     [SerializeField] private float _HealthPoints = 100f;
@@ -36,7 +35,10 @@ public class Health : MonoBehaviour
 
                 if (DestroyOnDeath)
                 {
+                   
                     Destroy(gameObject);
+                  //  Thread.Sleep(7000);
+                  //  Application.Quit();
                 }
 
             } //end if health = 0
@@ -50,17 +52,8 @@ public class Health : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
-    // Update is called once per frame
-    void Update()
-    {
 
-          if (Input.GetKeyDown(KeyCode.Space))
-         {
-             HealthPoints = 0;
-         }
-
-    }
 }
